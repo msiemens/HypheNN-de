@@ -1,0 +1,10 @@
+[package]
+name = "prepare_data"
+version = "0.1.0"
+authors = ["Markus Siemens <markus@m-siemens.de>"]
+
+[dependencies]
+lazy_static = "0.2"
+quick-xml = "0.7.0"
+rand = "0.3"
+regex = "0.2"
