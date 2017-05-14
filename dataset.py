@@ -15,7 +15,7 @@ raw_text = raw_text.lower()
 chars = sorted(list(set(raw_text) - set(['\n', HYPHENATION_INDICATOR]) | set([''])))
 char_to_int = {c: i for i, c in enumerate(chars)}
 int_to_char = {v: k for k, v in char_to_int.items()}
-#int_to_char[0] = '@'
+int_to_char[0] = '_'
 
 n_chars = len(raw_text)
 n_vocab = len(chars)
@@ -134,7 +134,7 @@ def data_training():
 
 def data_validation():
 	try:
-		data = np.load(DATA_CACHE_TRAINING)
+		data = np.load(DATA_CACHE_VALIDATION)
 		return data['X'], data['y']
 	except FileNotFoundError:
 		print('Preparing validation data...')
