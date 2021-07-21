@@ -9,7 +9,7 @@ TRAINING_SET = 150000
 # VALIDATION_SET = 150000
 HYPHENATION_INDICATOR = '·'
 
-raw_text = open('wordlist.txt').read()
+raw_text = open('wordlist.txt', encoding='utf-8').read()
 raw_text = raw_text.lower()
 
 chars = sorted(list(set(raw_text) - set(['\n', HYPHENATION_INDICATOR]) | set([''])))
