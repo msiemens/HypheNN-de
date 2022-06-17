@@ -11,9 +11,9 @@ use std::io::prelude::*;
 use std::str;
 use std::path::Path;
 
-use quick_xml::reader::Reader;
+use quick_xml::Reader;
 use quick_xml::events::Event;
-use rand::Rng;
+use rand::prelude::*;
 use regex::Regex;
 
 
@@ -77,9 +77,9 @@ fn main() {
 
 	// Randomize line order
 	println!("Randomizing line order...");
-	let mut rng = rand::weak_rng();
+	let mut rng = rand::thread_rng();
 	let words = words.as_mut_slice();
-	rng.shuffle(words);
+	words.shuffle(&mut rng);
 
 	// Write output file
 	println!("Writing output file...");
