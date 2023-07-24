@@ -7,6 +7,11 @@ from model import model
 
 
 def predict(word):
+	if len(word) < 3:
+		print('WARNING: Word is too short to be hyphenated')
+
+		return word
+
 	model.load_weights('data/model.h5')
 
 	windows = dataset.process_word(word.lower(), training=False)
@@ -27,7 +32,9 @@ def predict(word):
 
 		hyphenated += word[offset + 2]
 
-	hyphenated += word[-1:]
+	if len(word) > 3:
+		hyphenated += word[-1:]
+
 	return hyphenated
 
 
