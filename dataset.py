@@ -94,7 +94,7 @@ def process_word(word, training=True):
 		#print('>>> h:', hyphenation)
 		#print()
 
-		one_hot = np.zeros((WINDOW_SIZE, n_vocab), dtype=np.bool)
+		one_hot = np.zeros((WINDOW_SIZE, n_vocab), dtype=bool)
 		one_hot[np.arange(WINDOW_SIZE), window] = True
 
 		# print(one_hot)
