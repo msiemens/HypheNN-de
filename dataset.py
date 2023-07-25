@@ -5,7 +5,6 @@ import numpy as np
 DATA_CACHE_TRAINING = 'wordlist-training.npz'
 DATA_CACHE_VALIDATION = 'wordlist-valdiation.npz'
 WINDOW_SIZE = 8
-TRAINING_SET = 150000
 # VALIDATION_SET = 150000
 HYPHENATION_INDICATOR = '·'
 
@@ -21,6 +20,9 @@ n_chars = len(raw_text)
 n_vocab = len(chars)
 
 words = raw_text.splitlines()
+
+TRAINING_SET = int(len(words) * 0.9)
+
 words_training = words[:TRAINING_SET]
 words_validation = words[TRAINING_SET:]
 
