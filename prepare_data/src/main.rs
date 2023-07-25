@@ -131,6 +131,7 @@ fn process_word(word: &str) -> Vec<String> {
 				&& !word.contains('[')
 				&& !word.contains(']')
 				&& !word.contains('@')
+				&& !word.contains('*')
 				&& word.chars().all(|c| {
 					char::is_ascii(&c)
 						|| c == '·'
